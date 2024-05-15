@@ -29,6 +29,7 @@ export default async function gamedigProxyHandler(req, res) {
       maxplayers: serverData.maxplayers,
       bots: serverData.bots.length,
       ping: serverData.ping,
+      version: serverData.version,
     });
   } catch (e) {
     if (e) logger.error(e);

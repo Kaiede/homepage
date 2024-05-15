@@ -34,6 +34,7 @@ export default function Component({ service }) {
         <Block label="gamedig.maxPlayers" />
         <Block label="gamedig.bots" />
         <Block label="gamedig.ping" />
+        <Block label="gamedig.version" />
       </Container>
     );
   }
@@ -52,6 +53,7 @@ export default function Component({ service }) {
   const ping = serverData.online
     ? `${t("common.ms", { value: serverData.ping, style: "unit", unit: "millisecond" })}`
     : "-";
+  const version = serverData.version ? serverData.version : "-";
 
   return (
     <Container service={service}>
@@ -63,6 +65,7 @@ export default function Component({ service }) {
       <Block label="gamedig.maxPlayers" value={maxPlayers} />
       <Block label="gamedig.bots" value={bots} />
       <Block label="gamedig.ping" value={ping} />
+      <Block label="gamedig.version" value={version} />
     </Container>
   );
 }
