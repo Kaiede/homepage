@@ -16,6 +16,8 @@ export default async function gamedigProxyHandler(req, res) {
       type: serviceWidget.serverType,
       host: url.hostname,
       port: url.port,
+      username: serviceWidget.username,
+      password: serviceWidget.password,
       givenPortOnly: true,
       checkOldIDs: true,
     });
