@@ -7,16 +7,15 @@ const { GameDig } = require("gamedig");
 
 export default async function gamedigProxyHandler(req, res) {
   const { group, service } = req.query;
-  const serviceWidget = await getServiceWidget(group, service);
-  const url = new URL(serviceWidget.url);
+  const { serverType, url, fields, type, ...serverOptions } = await getServiceWidget(group, service);
+  const serverUrl = new URL(url);
 
   try {
     const serverData = await GameDig.query({
-      type: serviceWidget.serverType,
-      host: url.hostname,
-      port: url.port,
-      username: serviceWidget.username,
-      password: serviceWidget.password,
+      ...serverOptions,
+      type: serverType,
+      host: serverUrl.hostname,
+      port: serverUrl.port,
       givenPortOnly: true,
     });
 
