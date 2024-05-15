@@ -774,7 +774,8 @@
         "players": "Players",
         "maxPlayers": "Max players",
         "bots": "Bots",
-        "ping": "Ping"
+        "ping": "Ping",
+        "version": "Version"
     },
     "urbackup": {
         "ok" : "Ok",
